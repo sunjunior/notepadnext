@@ -796,12 +796,12 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="220"/>
       <source>Mark All Occurrences</source>
-      <translation type="unfinished"/>
+      <translation>用格式标记全部</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="228"/>
       <source>Clear Marks</source>
-      <translation type="unfinished"/>
+      <translation>清除格式标记</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="251"/>
@@ -826,7 +826,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="289"/>
       <source>Unfold Level</source>
-      <translation type="unfinished"/>
+      <translation>展开层级</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="315"/>
@@ -1563,7 +1563,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1241"/>
       <source>Fold Level 1</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1244"/>
@@ -1573,7 +1573,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1249"/>
       <source>Fold Level 2</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1252"/>
@@ -1583,7 +1583,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1257"/>
       <source>Fold Level 3</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1260"/>
@@ -1593,7 +1593,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1265"/>
       <source>Fold Level 4</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级4</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1268"/>
@@ -1603,7 +1603,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1273"/>
       <source>Unfold Level 1</source>
-      <translation type="unfinished"/>
+      <translation>展开层级1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1276"/>
@@ -1613,7 +1613,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1281"/>
       <source>Unfold Level 2</source>
-      <translation type="unfinished"/>
+      <translation>展开层级2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1284"/>
@@ -1623,7 +1623,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1289"/>
       <source>Unfold Level 3</source>
-      <translation type="unfinished"/>
+      <translation>展开层级3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1292"/>
@@ -1633,7 +1633,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1297"/>
       <source>Unfold Level 4</source>
-      <translation type="unfinished"/>
+      <translation>展开层级4</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1300"/>
@@ -1643,7 +1643,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1305"/>
       <source>Fold All</source>
-      <translation type="unfinished"/>
+      <translation>折叠所有层级</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1308"/>
@@ -1653,7 +1653,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1313"/>
       <source>Unfold All</source>
-      <translation type="unfinished"/>
+      <translation>展开所有层级</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1316"/>
@@ -1663,7 +1663,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1321"/>
       <source>Fold Level 5</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级5</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1324"/>
@@ -1673,7 +1673,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1329"/>
       <source>Fold Level 6</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级6</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1332"/>
@@ -1683,7 +1683,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1337"/>
       <source>Fold Level 7</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级7</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1340"/>
@@ -1693,7 +1693,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1345"/>
       <source>Fold Level 8</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级8</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1348"/>
@@ -1703,7 +1703,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1353"/>
       <source>Fold Level 9</source>
-      <translation type="unfinished"/>
+      <translation>折叠层级9</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1356"/>
@@ -1713,7 +1713,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1361"/>
       <source>Unfold Level 5</source>
-      <translation type="unfinished"/>
+      <translation>展开层级5</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1364"/>
@@ -1723,7 +1723,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1369"/>
       <source>Unfold Level 6</source>
-      <translation type="unfinished"/>
+      <translation>展开层级6</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1372"/>
@@ -1733,7 +1733,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1377"/>
       <source>Unfold Level 7</source>
-      <translation type="unfinished"/>
+      <translation>展开层级7</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1380"/>
@@ -1743,7 +1743,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1385"/>
       <source>Unfold Level 8</source>
-      <translation type="unfinished"/>
+      <translation>展开层级8</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1388"/>
@@ -1753,7 +1753,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1393"/>
       <source>Unfold Level 9</source>
-      <translation type="unfinished"/>
+      <translation>展开层级9</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1396"/>
@@ -1779,53 +1779,53 @@
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1420"/>
       <source>Cut Bookmarked Lines</source>
-      <translation type="unfinished"/>
+      <translation>剪切书签行</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1425"/>
       <source>Copy Bookmarked Lines</source>
-      <translation type="unfinished"/>
+      <translation>复制书签行</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1430"/>
       <source>Delete Bookmarked Lines</source>
-      <translation type="unfinished"/>
+      <translation>删除书签行</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1435"/>
       <source>Mark Style 1</source>
-      <translation type="unfinished"/>
+      <translation>使用格式1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1443"/>
       <source>Mark Style 2</source>
-      <translation type="unfinished"/>
+      <translation>使用格式2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1451"/>
       <source>Clear Style 1</source>
-      <translation type="unfinished"/>
+      <translation>清除格式1</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1459"/>
       <source>Clear Style 2</source>
-      <translation type="unfinished"/>
+      <translation>清除格式2</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1467"/>
       <source>Mark Style 3</source>
-      <translation type="unfinished"/>
+      <translation>使用格式3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1475"/>
       <source>Clear Style 3</source>
-      <translation type="unfinished"/>
+      <translation>清除格式3</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1483"/>
       <location filename="../src/dialogs/MainWindow.ui" line="1486"/>
       <source>Clear All Styles</source>
-      <translation type="unfinished"/>
+      <translation>清除所有格式标记</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1491"/>
@@ -2069,7 +2069,7 @@
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1935"/>
       <source>Zoom: %1%</source>
-      <translation type="unfinished"/>
+      <translation>缩放：%1%</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="2102"/>
@@ -2087,22 +2087,22 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="37"/>
       <source>Show menu bar</source>
-      <translation type="unfinished"/>
+      <translation>显示菜单栏</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="44"/>
       <source>Show toolbar</source>
-      <translation type="unfinished"/>
+      <translation>显示工具栏</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="51"/>
       <source>Show status bar</source>
-      <translation type="unfinished"/>
+      <translation>显示状态栏</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="58"/>
       <source>Restore previous session</source>
-      <translation type="unfinished"/>
+      <translation>恢复上次会话</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="70"/>
@@ -2112,12 +2112,12 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="77"/>
       <source>Temporary files</source>
-      <translation type="unfinished"/>
+      <translation>临时文件</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="89"/>
       <source>Recenter find/replace dialog when opened</source>
-      <translation type="unfinished"/>
+      <translation>打开时居中查找/替换对话框</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="96"/>
@@ -2127,68 +2127,68 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="114"/>
       <source>Translation:</source>
-      <translation type="unfinished"/>
+      <translation>语言：</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="123"/>
       <source>Exit on last tab closed</source>
-      <translation type="unfinished"/>
+      <translation>关闭最后一个标签页时退出</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="132"/>
       <source>Default Font</source>
-      <translation type="unfinished"/>
+      <translation>默认字体</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="138"/>
       <source>Font</source>
-      <translation type="unfinished"/>
+      <translation>字体</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="148"/>
       <source>Font Size</source>
-      <translation type="unfinished"/>
+      <translation>字号</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="155"/>
       <source>pt</source>
-      <translation type="unfinished"/>
+      <translation>pt</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="188"/>
       <source>Default Line Endings</source>
-      <translation type="unfinished"/>
+      <translation>默认行尾格式</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="200"/>
       <source>Highlight URLs</source>
-      <translation type="unfinished"/>
+      <translation>高亮 URL</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="207"/>
       <source>Show Line Numbers</source>
-      <translation type="unfinished"/>
+      <translation>显示行号</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="214"/>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="122"/>
       <source>Default Directory</source>
-      <translation type="unfinished"/>
+      <translation>默认目录</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="220"/>
       <source>Follow Current Document</source>
-      <translation type="unfinished"/>
+      <translation>跟随当前文档</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="227"/>
       <source>Last Used Directory</source>
-      <translation type="unfinished"/>
+      <translation>上次使用的目录</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="246"/>
       <source>...</source>
-      <translation type="unfinished"/>
+      <translation>...</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="277"/>
@@ -2198,7 +2198,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="289"/>
       <source>An application restart is required to apply certain settings.</source>
-      <translation type="unfinished"/>
+      <translation>应用某些设置需要重启程序。</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="56"/>
@@ -2213,7 +2213,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="85"/>
       <source>System Default</source>
-      <translation type="unfinished"/>
+      <translation>系统默认</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="86"/>
@@ -2223,7 +2223,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="87"/>
       <source>Linux (LF)</source>
-      <translation type="unfinished"/>
+      <translation>Linux (LF)</translation>
     </message>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="88"/>
@@ -2233,7 +2233,7 @@
     <message>
       <location filename="../src/dialogs/PreferencesDialog.cpp" line="185"/>
       <source>&lt;System Default&gt;</source>
-      <translation type="unfinished"/>
+      <translation>&lt;系统默认&gt;</translation>
     </message>
   </context>
   <context>

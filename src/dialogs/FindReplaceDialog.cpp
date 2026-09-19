@@ -24,6 +24,9 @@
 #include <QStatusBar>
 #include <QLineEdit>
 #include <QKeyEvent>
+#include <QPainter>
+#include <QPixmap>
+#include <QDir>
 
 #include "ScintillaNext.h"
 #include "MainWindow.h"
@@ -50,6 +53,54 @@ FindReplaceDialog::FindReplaceDialog(ISearchResultsHandler *searchResults, MainW
     // Turn off the help button on the dialog
     setWindowFlag(Qt::WindowContextHelpButtonHint, false);
     ui->setupUi(this);
+
+    // Generate a checkmark glyph so the boxes show a real tick instead of a filled color
+    const QString checkmarkPath = QDir::tempPath() + "/notepadnext-checkmark.png";
+    QPixmap checkmark(16, 16);
+    checkmark.fill(Qt::transparent);
+    {
+        QPainter painter(&checkmark);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setPen(QPen(QColor("#111111"), 2));
+        painter.drawLine(QPointF(3, 9), QPointF(7, 13));
+        painter.drawLine(QPointF(7, 13), QPointF(13, 4));
+    }
+    checkmark.save(checkmarkPath);
+
+    // Generate a filled dot glyph for the radio button selection
+    const QString dotPath = QDir::tempPath() + "/notepadnext-radio-dot.png";
+    QPixmap dot(16, 16);
+    dot.fill(Qt::transparent);
+    {
+        QPainter painter(&dot);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setBrush(QBrush(QColor("#111111")));
+        painter.setPen(Qt::NoPen);
+        painter.drawEllipse(QPointF(8, 8), 4.0, 4.0);
+    }
+    dot.save(dotPath);
+
+    // Light theme with clearly visible indicators, matching the Preferences dialog
+    setStyleSheet(QStringLiteral(
+        "QDialog#FindReplaceDialog { background-color: #ffffff; color: #000000; }"
+        "QDialog#FindReplaceDialog QGroupBox { background-color: #f0f0f0; color: #000000; border: 1px solid #b0b0b0; border-radius: 4px; }"
+        "QDialog#FindReplaceDialog QGroupBox::indicator { width: 16px; height: 16px; border: 1px solid #333333; border-radius: 3px; background-color: #ffffff; margin-right: 4px; }"
+        "QDialog#FindReplaceDialog QGroupBox::indicator:checked { image: url('%1'); background-color: #ffffff; border: 1px solid #333333; }"
+        "QDialog#FindReplaceDialog QLabel { color: #000000; background: transparent; }"
+        "QDialog#FindReplaceDialog QCheckBox { color: #000000; background: transparent; spacing: 8px; }"
+        "QDialog#FindReplaceDialog QCheckBox::indicator { width: 16px; height: 16px; border: 1px solid #333333; border-radius: 3px; background-color: #ffffff; }"
+        "QDialog#FindReplaceDialog QCheckBox::indicator:checked { image: url('%1'); background-color: #ffffff; border: 1px solid #333333; }"
+        "QDialog#FindReplaceDialog QCheckBox::indicator:hover { border-color: #2d8ff0; }"
+        "QDialog#FindReplaceDialog QRadioButton { color: #000000; background: transparent; spacing: 8px; }"
+        "QDialog#FindReplaceDialog QRadioButton::indicator { width: 16px; height: 16px; border: 1px solid #333333; border-radius: 8px; background-color: #ffffff; }"
+        "QDialog#FindReplaceDialog QRadioButton::indicator:checked { image: url('%2'); background-color: #ffffff; border: 1px solid #333333; }"
+        "QDialog#FindReplaceDialog QLineEdit, QDialog#FindReplaceDialog QComboBox { background-color: #ffffff; color: #000000; border: 1px solid #b0b0b0; }"
+        "QDialog#FindReplaceDialog QPushButton { background-color: #f0f0f0; color: #000000; border: 1px solid #b0b0b0; border-radius: 3px; padding: 3px 10px; }"
+        "QDialog#FindReplaceDialog QPushButton:hover { background-color: #e0e0e0; }"
+        "QDialog#FindReplaceDialog QPushButton:default { border: 1px solid #3399ff; }"
+        "QDialog#FindReplaceDialog QTabBar::tab { background: #e5e5e5; color: #000000; border: 1px solid #c5c5c5; padding: 4px 10px; }"
+        "QDialog#FindReplaceDialog QTabBar::tab:selected { background: #ffffff; }"
+        "QDialog#FindReplaceDialog QStatusBar { background-color: #f0f0f0; color: #000000; }").arg(checkmarkPath, dotPath));
 
     // Get the current editor, and keep up the reference
     setEditor(window->currentEditor());

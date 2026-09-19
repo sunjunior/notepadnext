@@ -341,7 +341,6 @@
     <addaction name="separator"/>
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutNotepadNext"/>
-    <addaction name="actionDebugInfo"/>
    </widget>
    <widget class="QMenu" name="menuEncodings">
     <property name="title">
@@ -1408,11 +1407,6 @@
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
-   </property>
-  </action>
-  <action name="actionDebugInfo">
-   <property name="text">
-    <string>Debug Info...</string>
    </property>
   </action>
   <action name="actionCutBookmarkedLines">

@@ -845,15 +845,6 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
                                 .arg(QApplication::applicationDisplayName(), APP_VERSION, APP_DISTRIBUTION, QStringLiteral(APP_COPYRIGHT).toHtmlEscaped()));
     });
 
-    connect(ui->actionDebugInfo, &QAction::triggered, this, [=]() {
-        QMessageBox mb(QMessageBox::Information, tr("Debug Info"), app->debugInfo().join('\n'), QMessageBox::Ok, this);
-
-        mb.setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont).family());
-        mb.setTextInteractionFlags(Qt::TextSelectableByMouse);
-
-        mb.exec();
-    });
-
 #ifdef Q_OS_WIN
     connect(ui->actionShowInExplorer, &QAction::triggered, this, [=]() {
         QString filePath = QDir::toNativeSeparators(currentEditor()->getFileInfo().canonicalFilePath());

@@ -70,10 +70,10 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
-           <number>0</number>
+           <number>10</number>
           </property>
           <property name="topMargin">
-           <number>4</number>
+           <number>26</number>
           </property>
           <item>
            <widget class="QRadioButton" name="radioNormalSearch">
@@ -184,16 +184,16 @@
        <property name="checked">
         <bool>false</bool>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <property name="spacing">
-         <number>4</number>
-        </property>
-        <property name="topMargin">
-         <number>4</number>
-        </property>
-        <property name="bottomMargin">
-         <number>4</number>
-        </property>
+<layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>8</number>
+         </property>
+         <property name="topMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
         <item>
          <widget class="QRadioButton" name="radioOnLosingFocus">
           <property name="text">
