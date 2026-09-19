@@ -68,6 +68,34 @@ sudo cp ~/notepadnext/src/notepadnext/build/src/NotepadNext /usr/bin/NotepadNext
 NotepadNext
 ```
 
+## AppImage 系统要求
+
+Release 页提供的 `NotepadNext-v0.14-zh-x86_64.AppImage` 已内置 Qt 等主体依赖，用户侧只需满足（x86_64 Linux）：
+
+1. **FUSE 2**（直接运行必需；不装也可用 `--appimage-extract-and-run` 参数启动）
+   - Debian/Ubuntu/Mint/Pop!_OS：`sudo apt install libfuse2`
+   - Fedora/Rocky/Alma：`sudo dnf install fuse-libs`
+   - Arch/Manjaro：`sudo pacman -S fuse2`
+2. **glibc ≥ 2.38**（可用 `ldd --version` 自查）
+
+| 发行版 | glibc | 能否运行 |
+| --- | --- | --- |
+| Ubuntu 24.04 LTS / 25.04 / 25.10 | 2.39–2.41 | ✅ |
+| Ubuntu 22.04 LTS 及更早 | ≤ 2.35 | ❌ |
+| Debian 13 trixie | 2.40+ | ✅ |
+| Debian 12 及更早 | ≤ 2.36 | ❌ |
+| Fedora 39 / 40+ | 2.38+ | ✅（39 为临界版本） |
+| Linux Mint 22.x / LMDE 7 | 2.39+ | ✅ |
+| Linux Mint 21.x / LMDE 6 | ≤ 2.36 | ❌ |
+| Rocky/AlmaLinux 10 | 2.39 | ✅ |
+| Rocky/AlmaLinux 9 | 2.34 | ❌ |
+| openSUSE Leap 16.0 / Tumbleweed | 2.40+ | ✅ |
+| openSUSE Leap 15.6 | 2.38 | ✅（临界版本） |
+| Arch / Manjaro / EndeavourOS（滚动） | 最新 | ✅ |
+| Pop!_OS 24.04 | 2.39 | ✅ |
+
+注：本包在 Arch（glibc 2.44）上构建，如需支持 Ubuntu 22.04 等老系统，需在老系统上重新打包。
+
 ## 开发
 
 上游使用 QtCreator + MSVC 开发，要求 Qt >= 6.5。本分支同样可用 QtCreator 直接打开根目录 `CMakeLists.txt` 配置构建；更详细的官方构建说明见 [doc/Building.md](doc/Building.md)（英文）。
