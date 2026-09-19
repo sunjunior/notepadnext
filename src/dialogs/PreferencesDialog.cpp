@@ -26,14 +26,66 @@
 #include <QButtonGroup>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QPainter>
+#include <QPixmap>
+#include <QDir>
+#include <QStandardPaths>
 
 
 PreferencesDialog::PreferencesDialog(ApplicationSettings *settings, QWidget *parent) :
-    QDialog(parent, Qt::Tool),
+    QDialog(parent, Qt::Dialog),
     ui(new Ui::PreferencesDialog),
     settings(settings)
 {
     ui->setupUi(this);
+
+    // Generate a checkmark glyph so the box shows a real tick instead of a filled color
+    const QString checkmarkPath = QDir::tempPath() + "/notepadnext-checkmark.png";
+    QPixmap checkmark(16, 16);
+    checkmark.fill(Qt::transparent);
+    {
+        QPainter painter(&checkmark);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setPen(QPen(QColor("#111111"), 2));
+        painter.drawLine(QPointF(3, 9), QPointF(7, 13));
+        painter.drawLine(QPointF(7, 13), QPointF(13, 4));
+    }
+    checkmark.save(checkmarkPath);
+
+    // Generate a filled dot glyph for the radio button selection
+    const QString dotPath = QDir::tempPath() + "/notepadnext-radio-dot.png";
+    QPixmap dot(16, 16);
+    dot.fill(Qt::transparent);
+    {
+        QPainter painter(&dot);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setBrush(QBrush(QColor("#111111")));
+        painter.setPen(Qt::NoPen);
+        painter.drawEllipse(QPointF(8, 8), 4.0, 4.0);
+    }
+    dot.save(dotPath);
+
+    setStyleSheet(QStringLiteral(
+        "QDialog#PreferencesDialog { background-color: #ffffff; color: #000000; }"
+        "QDialog#PreferencesDialog QScrollArea { background-color: #ffffff; border: none; }"
+        "QDialog#PreferencesDialog QScrollArea > QWidget > QWidget { background-color: #ffffff; }"
+        "QDialog#PreferencesDialog QScrollArea QWidget { background: #ffffff; }"
+        "QDialog#PreferencesDialog QGroupBox { background-color: #f0f0f0; color: #000000; border: 1px solid #c0c0c0; border-radius: 4px; }"
+        "QDialog#PreferencesDialog QGroupBox::indicator { width: 16px; height: 16px; border: 1px solid #333333; border-radius: 3px; background-color: #ffffff; margin-right: 4px; }"
+        "QDialog#PreferencesDialog QGroupBox::indicator:checked { image: url('%1'); background-color: #ffffff; border: 1px solid #333333; }"
+        "QDialog#PreferencesDialog QWidget { color: #000000; }"
+        "QDialog#PreferencesDialog QLabel { color: #000000; background: transparent; }"
+        "QDialog#PreferencesDialog QCheckBox { color: #000000; background: transparent; spacing: 8px; }"
+        "QDialog#PreferencesDialog QCheckBox::indicator { width: 16px; height: 16px; border: 1px solid #333333; border-radius: 3px; background-color: #ffffff; }"
+        "QDialog#PreferencesDialog QCheckBox::indicator:checked { image: url('%1'); background-color: #ffffff; border: 1px solid #333333; }"
+        "QDialog#PreferencesDialog QCheckBox::indicator:hover { border-color: #2d8ff0; }"
+        "QDialog#PreferencesDialog QRadioButton { color: #000000; background: transparent; spacing: 8px; }"
+        "QDialog#PreferencesDialog QRadioButton::indicator { width: 16px; height: 16px; border: 1px solid #333333; border-radius: 8px; background-color: #ffffff; }"
+        "QDialog#PreferencesDialog QRadioButton::indicator:checked { image: url('%2'); background-color: #ffffff; border: 1px solid #333333; }"
+        "QDialog#PreferencesDialog QLineEdit, QDialog#PreferencesDialog QComboBox, QDialog#PreferencesDialog QSpinBox, QDialog#PreferencesDialog QFontComboBox { background-color: #ffffff; color: #000000; border: 1px solid #b0b0b0; }"
+        "QDialog#PreferencesDialog QPushButton, QDialog#PreferencesDialog QToolButton { background-color: #f0f0f0; color: #000000; border: 1px solid #b0b0b0; border-radius: 3px; padding: 3px 8px; }"
+        "QDialog#PreferencesDialog QScrollBar:vertical { background: #f0f0f0; width: 14px; }"
+        "QDialog#PreferencesDialog QScrollBar::handle:vertical { background: #c0c0c0; border-radius: 7px; min-height: 20px; }").arg(checkmarkPath, dotPath));
 
     QIcon icon = style()->standardIcon(QStyle::SP_MessageBoxInformation);
     QPixmap pixmap = icon.pixmap(QSize(16, 16));

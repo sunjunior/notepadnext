@@ -1817,7 +1817,7 @@ void MainWindow::applyStyleSheet()
         custom.close();
     }
 
-    setStyleSheet(sheet);
+    app->setStyleSheet(sheet);
 }
 
 void MainWindow::setLanguage(ScintillaNext *editor, const QString &languageName)

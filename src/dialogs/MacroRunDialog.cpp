@@ -24,7 +24,7 @@
 
 
 MacroRunDialog::MacroRunDialog(QWidget *parent, MacroManager *mm) :
-    QDialog(parent, Qt::Tool),
+    QDialog(parent, Qt::Dialog),
     ui(new Ui::MacroRunDialog),
     macroManager(mm)
 {
