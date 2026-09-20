@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QDirIterator>
 #include <QDebug>
+#include <QLibraryInfo>
 
 #include <memory>
 
@@ -77,10 +78,24 @@ void TranslationManager::loadTranslation(QLocale locale)
 
     const QStringList filenames{QStringList{QApplication::applicationName(), "qt", "qtbase"}};
 
+    // The application bundle (":/i18n/") only ships the NotepadNext_*.qm files.
+    // Fall back to the Qt installation's translation directory so that the
+    // standard Qt dialogs (QMessageBox buttons, QFileDialog, ...) are also
+    // translated (e.g. qtbase_zh_CN.qm provides 保存/丢弃/取消).
+    const QStringList searchPaths{path, QLibraryInfo::path(QLibraryInfo::TranslationsPath)};
+
     for (const auto& filename : filenames) {
         std::unique_ptr<QTranslator> translator = std::make_unique<QTranslator>();
 
-        if (translator->load(locale, filename, QStringLiteral("_"), path)) {
+        bool loaded = false;
+        for (const auto& dir : searchPaths) {
+            if (translator->load(locale, filename, QStringLiteral("_"), dir)) {
+                loaded = true;
+                break;
+            }
+        }
+
+        if (loaded) {
             if (QCoreApplication::installTranslator(translator.get())) {
                 qInfo() << "Loaded translation" << translator.get()->filePath();
                 translators.append(translator.release());
