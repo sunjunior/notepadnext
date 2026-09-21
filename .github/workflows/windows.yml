@@ -70,4 +70,3 @@ jobs:
         run: |
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then TAG="${{ github.event.inputs.release_tag }}"; else TAG="$GITHUB_REF_NAME"; fi
           gh release upload "$TAG" "${{ steps.nsi.outputs.path }}" --clobber
-          fi
