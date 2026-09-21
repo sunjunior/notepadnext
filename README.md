@@ -25,7 +25,7 @@
    - 菜单两组，语义对齐 Notepad++：**"X 编码"**（ANSI / UTF-8 / UTF-8 BOM / UTF-16 BE BOM / UTF-16 LE BOM）按指定编码重新解读文件字节，未编辑时直接重解码盘上原始字节且不脏化文档；**"转为 X"** 保持文本不变、只更换保存编码；
    - "ANSI" 映射为 GB18030（GBK 超集）；状态栏实时显示当前编码；
    - 顺带修复上游 `rename()` 成功/失败判断颠倒的 bug。
-2. **标准对话框汉化**：保存/关闭确认框的"保存/不保存/取消"按钮通过回退加载系统 Qt 翻译（`qtbase_zh_CN.qm`）实现汉化。
+2. **标准对话框汉化**：保存/关闭确认框的"保存/不保存/取消"按钮（Linux 回退加载系统 Qt 翻译；Windows 安装包已随附 `qtbase_zh_CN.qm`，两平台表现一致）。
 3. **查找/替换对话框**：浅色主题样式，复选框显示真实对勾、单选框显示实心圆点；`Search Mode` 与 `Transparency` 分组标题和首选项的间距与选项间间距对齐。
 4. **偏好设置对话框**：补全 23 条简体中文翻译（`i18n/NotepadNext_zh_CN.ts`、`i18n/NotepadNext_zh.ts`）。
 5. **视图菜单**：折叠/展开所有层级、折叠/展开层级 1–9、缩放指示汉化，术语参照 Notepad++ 官方简体中文语言包。
@@ -111,6 +111,8 @@ Release 页提供的 `NotepadNext-v0.14-zh-x86_64.AppImage` 已内置 Qt 等主�
 ## 开发
 
 上游使用 QtCreator + MSVC 开发，要求 Qt >= 6.5。本分支同样可用 QtCreator 直接打开根目录 `CMakeLists.txt` 配置构建；更详细的官方构建说明见 [doc/Building.md](doc/Building.md)（英文）。
+
+Windows 安装包由仓库自带的 GitHub Actions workflow 一键产出：推送 tag 自动触发，或在 Actions 页手动运行 "Windows Installer"（可选 Qt 版本与挂载目标 Release），构建环境为 MSVC 2022 + Qt（`aqtinstall` 安装；因 Qt 官方自 6.11 起更换 Windows 发布目录结构，workflow 目前使用 6.10.x），产物 `NotepadNext-v0.14-zh-windows-x64-Installer.exe` 自动附加到 Release。
 
 ## License
 
