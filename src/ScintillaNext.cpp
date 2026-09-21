@@ -106,11 +106,13 @@ static QString decodeToText(const QByteArray &data, ScintillaNext::Encoding enco
     case ScintillaNext::Encoding::Utf8:
         return QString::fromUtf8(data);
     case ScintillaNext::Encoding::Utf8Bom:
-        return QString::fromUtf8(data.constData() + BOM_UTF8.size(), data.size() - BOM_UTF8.size());
+        if (data.startsWith(BOM_UTF8))
+            return QString::fromUtf8(data.constData() + BOM_UTF8.size(), data.size() - BOM_UTF8.size());
+        return QString::fromUtf8(data);
     case ScintillaNext::Encoding::Utf16LeBom:
-        return decodeUtf16(data.mid(BOM_UTF16LE.size()), true);
+        return decodeUtf16(data.startsWith(BOM_UTF16LE) ? data.mid(BOM_UTF16LE.size()) : data, true);
     case ScintillaNext::Encoding::Utf16BeBom:
-        return decodeUtf16(data.mid(BOM_UTF16BE.size()), false);
+        return decodeUtf16(data.startsWith(BOM_UTF16BE) ? data.mid(BOM_UTF16BE.size()) : data, false);
     }
 
     return QString();
@@ -488,6 +490,47 @@ void ScintillaNext::convertTo(ScintillaNext::Encoding encoding)
     encodingDirty = true;
 
     emit encodingChanged();
+}
+
+void ScintillaNext::openWith(ScintillaNext::Encoding encoding)
+{
+    // Like Notepad++'s "Open in encoding": re-interpret the source bytes as the
+    // given encoding. When nothing is edited yet the real bytes on disk are used,
+    // otherwise the current text is re-encoded with its own encoding first.
+    const bool fromDisk = isFile() && !modify() && !encodingDirty;
+
+    QByteArray source;
+    if (fromDisk) {
+        source = diskData;
+    }
+    else {
+        const QByteArray utf8 = QByteArray::fromRawData((char*)characterPointer(), textLength());
+        source = encodeFromText(utf8, currentEncoding);
+    }
+
+    const QByteArray newUtf8 = decodeToText(source, encoding).toUtf8();
+
+    if (encoding != currentEncoding) {
+        currentEncoding = encoding;
+        emit encodingChanged();
+    }
+
+    const QByteArray utf8 = QByteArray::fromRawData((char*)characterPointer(), textLength());
+    if (newUtf8 != utf8) {
+        setTargetRange(0, textLength());
+        replaceTarget(newUtf8.size(), newUtf8.constData());
+        setSelection(0, 0);
+    }
+
+    if (fromDisk) {
+        // A pure re-interpretation of the unchanged file: same state as having
+        // opened the file with this encoding in the first place, so it is clean.
+        encodingDirty = false;
+        setSavePoint();
+    }
+    else {
+        encodingDirty = true;
+    }
 }
 
 void ScintillaNext::omitModifications()

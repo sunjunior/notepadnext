@@ -237,6 +237,12 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
     connect(ui->actionConvertToUtf16LeBom, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Utf16LeBom); });
     connect(ui->actionConvertToUtf16BeBom, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Utf16BeBom); });
 
+    connect(ui->actionOpenAsAnsi, &QAction::triggered, this, [=]() { openWithEncoding(ScintillaNext::Encoding::Ansi); });
+    connect(ui->actionOpenAsUtf8, &QAction::triggered, this, [=]() { openWithEncoding(ScintillaNext::Encoding::Utf8); });
+    connect(ui->actionOpenAsUtf8Bom, &QAction::triggered, this, [=]() { openWithEncoding(ScintillaNext::Encoding::Utf8Bom); });
+    connect(ui->actionOpenAsUtf16BeBom, &QAction::triggered, this, [=]() { openWithEncoding(ScintillaNext::Encoding::Utf16BeBom); });
+    connect(ui->actionOpenAsUtf16LeBom, &QAction::triggered, this, [=]() { openWithEncoding(ScintillaNext::Encoding::Utf16LeBom); });
+
     connect(ui->actionUpperCase, &QAction::triggered, this, [=]() { currentEditor()->upperCase(); });
     connect(ui->actionLowerCase, &QAction::triggered, this, [=]() { currentEditor()->lowerCase(); });
 
@@ -1572,6 +1578,18 @@ void MainWindow::convertEncoding(ScintillaNext::Encoding encoding)
     ScintillaNext *editor = currentEditor();
 
     editor->convertTo(encoding);
+
+    updateEncodingBasedUi(editor);
+    updateSaveStatusBasedUi(editor);
+
+    ui->statusBar->refresh(editor);
+}
+
+void MainWindow::openWithEncoding(ScintillaNext::Encoding encoding)
+{
+    ScintillaNext *editor = currentEditor();
+
+    editor->openWith(encoding);
 
     updateEncodingBasedUi(editor);
     updateSaveStatusBasedUi(editor);

@@ -100,6 +100,7 @@ public slots:
 
     void convertEOLs(int eolMode);
     void convertEncoding(ScintillaNext::Encoding encoding);
+    void openWithEncoding(ScintillaNext::Encoding encoding);
 
     void showFindReplaceDialog(int index);
 

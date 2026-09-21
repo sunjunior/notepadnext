@@ -137,6 +137,7 @@ public slots:
     QFileDevice::FileError saveCopyAs(const QString &filePath);
     bool rename(const QString &newFilePath);
     void convertTo(ScintillaNext::Encoding encoding);
+    void openWith(ScintillaNext::Encoding encoding);
     ScintillaNext::FileStateChange checkFileForStateChange();
     bool moveToTrash();
 

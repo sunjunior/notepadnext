@@ -1453,6 +1453,26 @@
       <translation>转为 UTF-16BE BOM</translation>
     </message>
     <message>
+      <source>ANSI Encoding</source>
+      <translation>ANSI 编码</translation>
+    </message>
+    <message>
+      <source>UTF-8 Encoding</source>
+      <translation>UTF-8 编码</translation>
+    </message>
+    <message>
+      <source>UTF-8 BOM Encoding</source>
+      <translation>UTF-8 BOM 编码</translation>
+    </message>
+    <message>
+      <source>UTF-16 BE BOM Encoding</source>
+      <translation>UTF-16 BE BOM 编码</translation>
+    </message>
+    <message>
+      <source>UTF-16 LE BOM Encoding</source>
+      <translation>UTF-16 LE BOM 编码</translation>
+    </message>
+    <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1097"/>
       <source>Column Mode...</source>
       <translation>列编辑模式...</translation>

@@ -346,6 +346,12 @@
     <property name="title">
      <string>Encoding</string>
     </property>
+    <addaction name="actionOpenAsAnsi"/>
+    <addaction name="actionOpenAsUtf8"/>
+    <addaction name="actionOpenAsUtf8Bom"/>
+    <addaction name="actionOpenAsUtf16BeBom"/>
+    <addaction name="actionOpenAsUtf16LeBom"/>
+    <addaction name="separator"/>
     <addaction name="actionConvertToAnsi"/>
     <addaction name="actionConvertToUtf8"/>
     <addaction name="actionConvertToUtf8Bom"/>
@@ -1097,6 +1103,31 @@
    </property>
    <property name="text">
     <string>Edit Macros...</string>
+   </property>
+  </action>
+  <action name="actionOpenAsAnsi">
+   <property name="text">
+    <string>ANSI Encoding</string>
+   </property>
+  </action>
+  <action name="actionOpenAsUtf8">
+   <property name="text">
+    <string>UTF-8 Encoding</string>
+   </property>
+  </action>
+  <action name="actionOpenAsUtf8Bom">
+   <property name="text">
+    <string>UTF-8 BOM Encoding</string>
+   </property>
+  </action>
+  <action name="actionOpenAsUtf16BeBom">
+   <property name="text">
+    <string>UTF-16 BE BOM Encoding</string>
+   </property>
+  </action>
+  <action name="actionOpenAsUtf16LeBom">
+   <property name="text">
+    <string>UTF-16 LE BOM Encoding</string>
    </property>
   </action>
   <action name="actionConvertToAnsi">
