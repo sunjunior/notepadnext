@@ -1,0 +1,66 @@
+name: Windows Installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Attach installer to this release tag (leave empty for artifact only)'
+        required: false
+        default: 'v0.14-zh1'
+  push:
+    tags: ['v*']
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    env:
+      QT_VERSION: '6.11.2'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          arch: win64_msvc2022_64
+          modules: qt5compat
+
+      - name: Install NSIS
+        run: choco install nsis -y --no-progress
+
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build application
+        run: cmake --build build --target NotepadNext
+
+      - name: Build installer
+        run: cmake --build build --target installer
+
+      - name: Locate and rename installer
+        id: nsi
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Recurse -Filter 'NotepadNext-v*-Installer.exe' | Select-Object -First 1
+          if (-not $exe) { Write-Error 'installer not found'; exit 1 }
+          $target = "NotepadNext-v0.14-zh-windows-x64-Installer.exe"
+          Copy-Item $exe.FullName $target
+          "path=$target" >> $env:GITHUB_OUTPUT
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: ${{ steps.nsi.outputs.path }}
+
+      - name: Attach to GitHub Release
+        if: ${{ github.ref_type == 'tag' || (github.event_name == 'workflow_dispatch' && github.event.inputs.release_tag != '') }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then TAG="${{ github.event.inputs.release_tag }}"; else TAG="$GITHUB_REF_NAME"; fi
+          gh release upload "$TAG" "${{ steps.nsi.outputs.path }}" --clobber
+          fi
