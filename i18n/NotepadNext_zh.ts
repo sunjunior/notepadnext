@@ -1452,7 +1452,25 @@
       <source>Convert to UTF-16BE BOM</source>
       <translation>转为 UTF-16BE BOM</translation>
     </message>
+
     <message>
+      <source>Column Selection Mode...</source>
+      <translation>列选模式</translation>
+    </message>
+    <message>
+      <source>Column Mode Hint</source>
+      <translation>列模式提示</translation>
+    </message>
+    <message>
+      <source>There are 2 ways to switch to column selection mode:
+
+1. (Keyboard and mouse) Hold the Alt key while dragging with the left mouse button.
+2. (Keyboard only) Hold Alt+Shift and use the arrow keys.</source>
+      <translation>有2种方法可以切换到列选模式：
+
+1. （键盘和鼠标）按住alt键，同时鼠标左键拖动。
+2. （只需键盘）按住alt+shift键，并使用方向键。</translation>
+    </message>    <message>
       <source>ANSI Encoding</source>
       <translation>ANSI 编码</translation>
     </message>

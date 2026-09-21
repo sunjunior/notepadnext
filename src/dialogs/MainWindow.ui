@@ -193,6 +193,7 @@
     <addaction name="menuCommentUncomment"/>
     <addaction name="menuEncodingDecoding"/>
     <addaction name="separator"/>
+    <addaction name="actionColumnSelectionMode"/>
     <addaction name="actionColumnMode"/>
    </widget>
    <widget class="QMenu" name="menuSearch">
@@ -1168,6 +1169,11 @@
    </property>
    <property name="text">
     <string>Convert to UTF-16BE BOM</string>
+   </property>
+  </action>
+  <action name="actionColumnSelectionMode">
+   <property name="text">
+    <string>Column Selection Mode...</string>
    </property>
   </action>
   <action name="actionColumnMode">

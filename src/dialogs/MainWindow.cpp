@@ -307,6 +307,14 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
         scintillaSorter.sort(LineLengthSorter(Sorter::Direction::Descending));
     });
 
+    connect(ui->actionColumnSelectionMode, &QAction::triggered, this, [=]() {
+        QMessageBox::about(this, tr("Column Mode Hint"),
+            tr("There are 2 ways to switch to column selection mode:\n"
+               "\n"
+               "1. (Keyboard and mouse) Hold the Alt key while dragging with the left mouse button.\n"
+               "2. (Keyboard only) Hold Alt+Shift and use the arrow keys."));
+    });
+
     connect(ui->actionColumnMode, &QAction::triggered, this, [=]() {
         ColumnEditorDialog *columnEditor = findChild<ColumnEditorDialog *>(QString(), Qt::FindDirectChildrenOnly);
 
