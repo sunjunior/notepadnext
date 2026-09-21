@@ -24,6 +24,39 @@ list(APPEND WINDEPLOYQT_ARGS "${PACKAGE_DIR}/NotepadNext.exe")
 
 file(GLOB EXTRA_DLLS "${EXTRA_DLL_DIR}/*.dll")
 
+# Ship the Chinese translations of Qt's own dialogs (save/discard message boxes
+# etc.). windeployqt is run with --no-translations to keep the package small,
+# so copy just the needed qtbase .qm files into package/translations.
+# TranslationManager falls back to QLibraryInfo's TranslationsPath, which the
+# qt.conf written by windeployqt points at ./translations next to the exe.
+set(_qmake_exe "")
+if(TARGET Qt6::qmake)
+	get_target_property(_qmake_exe Qt6::qmake IMPORTED_LOCATION)
+else()
+	find_program(_qmake_exe NAMES qmake qmake6)
+endif()
+
+set(ZH_QM_EXTRA_CMDS "")
+if(_qmake_exe)
+	execute_process(COMMAND ${_qmake_exe} -query QT_INSTALL_TRANSLATIONS
+		OUTPUT_VARIABLE QT_TRANSLATIONS_DIR
+		OUTPUT_STRIP_TRAILING_WHITESPACE)
+	string(REPLACE "\\" "/" QT_TRANSLATIONS_DIR "${QT_TRANSLATIONS_DIR}")
+
+	set(ZH_QM_FILES "")
+	foreach(qm qtbase_zh_CN.qm qtbase_zh_TW.qm)
+		if(EXISTS "${QT_TRANSLATIONS_DIR}/${qm}")
+			list(APPEND ZH_QM_FILES "${QT_TRANSLATIONS_DIR}/${qm}")
+		endif()
+	endforeach()
+
+	if(ZH_QM_FILES)
+		set(ZH_QM_EXTRA_CMDS
+			COMMAND ${CMAKE_COMMAND} -E make_directory "${PACKAGE_DIR}/translations"
+			COMMAND ${CMAKE_COMMAND} -E copy_if_different ${ZH_QM_FILES} "${PACKAGE_DIR}/translations/")
+	endif()
+endif()
+
 # Define the package target
 add_custom_target(package
 	COMMENT "Packaging NotepadNext for distribution"
@@ -50,6 +83,9 @@ add_custom_target(package
 
 	# Run windeployqt with correct flags
 	COMMAND windeployqt ${WINDEPLOYQT_ARGS}
+
+	# Ship Chinese translations for Qt's built-in dialogs
+	${ZH_QM_EXTRA_CMDS}
 )
 
 set(ZIP_FILE "${CMAKE_BINARY_DIR}/NotepadNext-v${PROJECT_VERSION}.zip")
