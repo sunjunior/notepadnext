@@ -62,17 +62,17 @@
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="139"/>
       <source>Macintosh (CR)</source>
-      <translation type="unfinished">Macintosh (CR)</translation>
+      <translation>Macintosh (CR)</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="142"/>
       <source>Windows (CR LF)</source>
-      <translation type="unfinished">Windows (CR LF)</translation>
+      <translation>Windows (CR LF)</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="145"/>
       <source>Unix (LF)</source>
-      <translation type="unfinished">Unix (LF)</translation>
+      <translation>Unix (LF)</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="155"/>
@@ -105,13 +105,15 @@
       <extracomment>This is a short abbreviation to indicate characters will be replaced when typing</extracomment>
       <translation type="unfinished">OVR</translation>
     </message>
-    <message>
-      <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="182"/>
-      <source>INS</source>
-      <extracomment>This is a short abbreviation to indicate characters will be inserted when typing</extracomment>
-      <translation type="unfinished">INS</translation>
+      <message>
+      <source>OVR</source>
+      <translation>OVR</translation>
     </message>
-  </context>
+    <message>
+      <source>INS</source>
+      <translation>INS</translation>
+    </message>
+</context>
   <context>
     <name>EditorInspectorDock</name>
     <message>
@@ -308,14 +310,9 @@
       <translation>文件列表</translation>
     </message>
     <message>
-      <location filename="../src/docks/FileListDock.ui" line="51"/>
-      <source>...</source>
-      <translation type="unfinished">...</translation>
-    </message>
-    <message>
       <location filename="../src/docks/FileListDock.ui" line="90"/>
       <source>Sort by File Name</source>
-      <translation type="unfinished">Sort by File Name</translation>
+      <translation>按文件名排序</translation>
     </message>
   </context>
   <context>
@@ -1552,11 +1549,6 @@
       <translation>在资源管理器中查看</translation>
     </message>
     <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1168"/>
-      <source>Open %1 Here</source>
-      <translation type="unfinished">Open %1 Here</translation>
-    </message>
-    <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1173"/>
       <source>Toggle Bookmark</source>
       <translation>切换书签</translation>
@@ -1597,19 +1589,9 @@
       <translation>反转书签</translation>
     </message>
     <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1207"/>
-      <source>Next Tab</source>
-      <translation type="unfinished">Next Tab</translation>
-    </message>
-    <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1210"/>
       <source>Ctrl+Tab</source>
       <translation type="unfinished">Ctrl+Tab</translation>
-    </message>
-    <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1218"/>
-      <source>Previous Tab</source>
-      <translation type="unfinished">Previous Tab</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1221"/>
@@ -1817,12 +1799,6 @@
       <translation type="unfinished">Alt+Shift+9</translation>
     </message>
     <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1389"/>
-      <location filename="../src/dialogs/MainWindow.ui" line="1392"/>
-      <source>Toggle Overtype</source>
-      <translation type="unfinished">Toggle Overtype</translation>
-    </message>
-    <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1395"/>
       <source>Ins</source>
       <translation type="unfinished">Ins</translation>
@@ -1882,16 +1858,6 @@
       <location filename="../src/dialogs/MainWindow.ui" line="1474"/>
       <source>Clear All Styles</source>
       <translation>清除所有格式标记</translation>
-    </message>
-    <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1479"/>
-      <source>Remove Duplicate Lines</source>
-      <translation type="unfinished">Remove Duplicate Lines</translation>
-    </message>
-    <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1484"/>
-      <source>Remove Consecutive Duplicate Lines</source>
-      <translation type="unfinished">Remove Consecutive Duplicate Lines</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="375"/>
@@ -1995,87 +1961,87 @@
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1593"/>
       <source>Administrator</source>
-      <translation type="unfinished">Administrator</translation>
+      <translation>管理员</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1854"/>
       <source>&lt;b&gt;%1&lt;/b&gt; has been modified by another program. Do you want to reload it?</source>
-      <translation type="unfinished">&lt;b&gt;%1&lt;/b&gt; has been modified by another program. Do you want to reload it?</translation>
+      <translation>&lt;b&gt;%1&lt;/b&gt; 已被其他程序修改，是否重新加载？</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1880"/>
       <source>Read error</source>
-      <translation type="unfinished">Read error</translation>
+      <translation>读取错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1881"/>
       <source>Write error</source>
-      <translation type="unfinished">Write error</translation>
+      <translation>写入错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1882"/>
       <source>Fatal error</source>
-      <translation type="unfinished">Fatal error</translation>
+      <translation>致命错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1883"/>
       <source>Resource error</source>
-      <translation type="unfinished">Resource error</translation>
+      <translation>资源错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1884"/>
       <source>Open error</source>
-      <translation type="unfinished">Open error</translation>
+      <translation>打开错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1885"/>
       <source>Abort error</source>
-      <translation type="unfinished">Abort error</translation>
+      <translation>中止错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1886"/>
       <source>Timeout error</source>
-      <translation type="unfinished">Timeout error</translation>
+      <translation>超时错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1887"/>
       <source>Unspecified error</source>
-      <translation type="unfinished">Unspecified error</translation>
+      <translation>未指定错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1888"/>
       <source>Remove error</source>
-      <translation type="unfinished">Remove error</translation>
+      <translation>删除错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1889"/>
       <source>Rename error</source>
-      <translation type="unfinished">Rename error</translation>
+      <translation>重命名错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1890"/>
       <source>Position error</source>
-      <translation type="unfinished">Position error</translation>
+      <translation>定位错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1891"/>
       <source>Resize error</source>
-      <translation type="unfinished">Resize error</translation>
+      <translation>调整大小错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1892"/>
       <source>Permissions error</source>
-      <translation type="unfinished">Permissions error</translation>
+      <translation>权限错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1893"/>
       <source>Copy error</source>
-      <translation type="unfinished">Copy error</translation>
+      <translation>复制错误</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1894"/>
       <source>Unknown error (%1)</source>
-      <translation type="unfinished">Unknown error (%1)</translation>
+      <translation>未知错误 (%1)</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.cpp" line="1897"/>
@@ -2097,8 +2063,59 @@
       <source>No updates are available at this time.</source>
       <translation>本次无可用更新。</translation>
     </message>
-  </context>
-  <context>
+      <message>
+      <source>Remove Duplicate Lines</source>
+      <translation>移除重复行</translation>
+    </message>
+    <message>
+      <source>Remove Consecutive Duplicate Lines</source>
+      <translation>移除连续重复行</translation>
+    </message>
+    <message>
+      <source>Reverse Line Order</source>
+      <translation>反转行顺序</translation>
+    </message>
+    <message>
+      <source>Sort Lines Ascending</source>
+      <translation>行升序排序</translation>
+    </message>
+    <message>
+      <source>Sort Lines Descending</source>
+      <translation>行降序排序</translation>
+    </message>
+    <message>
+      <source>Sort Lines Ascending (Case-Insensitive)</source>
+      <translation>行升序排序（忽略大小写）</translation>
+    </message>
+    <message>
+      <source>Sort Lines Descending (Case-Insensitive)</source>
+      <translation>行降序排序（忽略大小写）</translation>
+    </message>
+    <message>
+      <source>Sort Lines by Length Ascending</source>
+      <translation>按行长升序排序</translation>
+    </message>
+    <message>
+      <source>Sort Lines by Length Descending</source>
+      <translation>按行长降序排序</translation>
+    </message>
+    <message>
+      <source>Next Tab</source>
+      <translation>下一个标签页</translation>
+    </message>
+    <message>
+      <source>Previous Tab</source>
+      <translation>上一个标签页</translation>
+    </message>
+    <message>
+      <source>Toggle Overtype</source>
+      <translation>切换改写模式</translation>
+    </message>
+    <message>
+      <source>Open %1 Here</source>
+      <translation>在此打开 %1</translation>
+    </message>
+</context><context>
     <name>PreferencesDialog</name>
     <message>
       <location filename="../src/dialogs/PreferencesDialog.ui" line="14"/>
@@ -2320,7 +2337,7 @@
     <message>
       <location filename="../src/docks/SearchResultsDock.ui" line="38"/>
       <source>Copy Results to Clipboard</source>
-      <translation type="unfinished">Copy Results to Clipboard</translation>
+      <translation>将结果复制到剪贴板</translation>
     </message>
     <message>
       <location filename="../src/docks/SearchResultsDock.cpp" line="57"/>
