@@ -7,6 +7,10 @@ on:
         description: 'Attach installer to this release tag (leave empty for artifact only)'
         required: false
         default: 'v0.14-zh1'
+      qt_version:
+        description: 'Qt version to build against'
+        required: false
+        default: '6.11.2'
   push:
     tags: ['v*']
 
@@ -16,7 +20,7 @@ jobs:
     permissions:
       contents: write
     env:
-      QT_VERSION: '6.11.2'
+      QT_VERSION: ${{ inputs.qt_version || '6.11.2' }}
     steps:
       - uses: actions/checkout@v4
 
