@@ -82,7 +82,7 @@ NotepadNext
 
 ## AppImage 系统要求
 
-Release 页提供的 `NotepadNext-v0.14-zh-x86_64.AppImage` 已内置 Qt 等主体依赖，用户侧只需满足（x86_64 Linux）：
+Release 页提供的 `NotepadNext-v0.14-zh-linux-x86_64.AppImage` 已内置 Qt 等主体依赖，用户侧只需满足（x86_64 Linux）：
 
 1. **FUSE 2**（直接运行必需；不装也可用 `--appimage-extract-and-run` 参数启动）
    - Debian/Ubuntu/Mint/Pop!_OS：`sudo apt install libfuse2`
