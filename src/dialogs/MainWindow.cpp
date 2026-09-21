@@ -224,6 +224,19 @@ MainWindow::MainWindow(NotepadNextApplication *app) :
     connect(ui->actionUnix, &QAction::triggered, this, [=]() { convertEOLs(SC_EOL_LF); });
     connect(ui->actionMacintosh, &QAction::triggered, this, [=]() { convertEOLs(SC_EOL_CR); });
 
+    QActionGroup *encodingActionGroup = new QActionGroup(this);
+    encodingActionGroup->addAction(ui->actionConvertToAnsi);
+    encodingActionGroup->addAction(ui->actionConvertToUtf8);
+    encodingActionGroup->addAction(ui->actionConvertToUtf8Bom);
+    encodingActionGroup->addAction(ui->actionConvertToUtf16LeBom);
+    encodingActionGroup->addAction(ui->actionConvertToUtf16BeBom);
+
+    connect(ui->actionConvertToAnsi, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Ansi); });
+    connect(ui->actionConvertToUtf8, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Utf8); });
+    connect(ui->actionConvertToUtf8Bom, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Utf8Bom); });
+    connect(ui->actionConvertToUtf16LeBom, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Utf16LeBom); });
+    connect(ui->actionConvertToUtf16BeBom, &QAction::triggered, this, [=]() { convertEncoding(ScintillaNext::Encoding::Utf16BeBom); });
+
     connect(ui->actionUpperCase, &QAction::triggered, this, [=]() { currentEditor()->upperCase(); });
     connect(ui->actionLowerCase, &QAction::triggered, this, [=]() { currentEditor()->lowerCase(); });
 
@@ -1554,6 +1567,18 @@ void MainWindow::convertEOLs(int eolMode)
     ui->statusBar->refresh(editor);
 }
 
+void MainWindow::convertEncoding(ScintillaNext::Encoding encoding)
+{
+    ScintillaNext *editor = currentEditor();
+
+    editor->convertTo(encoding);
+
+    updateEncodingBasedUi(editor);
+    updateSaveStatusBasedUi(editor);
+
+    ui->statusBar->refresh(editor);
+}
+
 void MainWindow::showFindReplaceDialog(int index)
 {
     ScintillaNext *editor = currentEditor();
@@ -1652,6 +1677,27 @@ void MainWindow::updateEOLBasedUi(ScintillaNext *editor)
     }
 }
 
+void MainWindow::updateEncodingBasedUi(ScintillaNext *editor)
+{
+    switch (editor->encoding()) {
+    case ScintillaNext::Encoding::Ansi:
+        ui->actionConvertToAnsi->setChecked(true);
+        break;
+    case ScintillaNext::Encoding::Utf8:
+        ui->actionConvertToUtf8->setChecked(true);
+        break;
+    case ScintillaNext::Encoding::Utf8Bom:
+        ui->actionConvertToUtf8Bom->setChecked(true);
+        break;
+    case ScintillaNext::Encoding::Utf16LeBom:
+        ui->actionConvertToUtf16LeBom->setChecked(true);
+        break;
+    case ScintillaNext::Encoding::Utf16BeBom:
+        ui->actionConvertToUtf16BeBom->setChecked(true);
+        break;
+    }
+}
+
 void MainWindow::updateSaveStatusBasedUi(ScintillaNext *editor)
 {
     qInfo(Q_FUNC_INFO);
@@ -1714,6 +1760,7 @@ void MainWindow::updateGui(ScintillaNext *editor)
     updateFileStatusBasedUi(editor);
     updateSaveStatusBasedUi(editor);
     updateEOLBasedUi(editor);
+    updateEncodingBasedUi(editor);
     updateEditorPositionBasedUi();
     updateSelectionBasedUi(editor);
     updateContentBasedUi(editor);

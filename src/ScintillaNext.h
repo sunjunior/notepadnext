@@ -107,14 +107,15 @@ public:
         FileMissing, // Buffer with a missing file on the file system
     };
 
-    enum class BomType {
-        None,
+    enum class Encoding {
+        Ansi,      // GB18030
         Utf8,
-        Utf16LE,
-        Utf16BE
+        Utf8Bom,
+        Utf16LeBom,
+        Utf16BeBom,
     };
 
-    BomType bom() const { return bomType; }
+    Encoding encoding() const { return currentEncoding; }
 
     bool isTemporary() const { return temporary; }
     void setTemporary(bool temp);
@@ -135,6 +136,7 @@ public slots:
     QFileDevice::FileError saveAs(const QString &newFilePath);
     QFileDevice::FileError saveCopyAs(const QString &filePath);
     bool rename(const QString &newFilePath);
+    void convertTo(ScintillaNext::Encoding encoding);
     ScintillaNext::FileStateChange checkFileForStateChange();
     bool moveToTrash();
 
@@ -153,6 +155,7 @@ signals:
 
     void lexerChanged();
     void reloaded();
+    void encodingChanged();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event) override;
@@ -161,7 +164,9 @@ protected:
 private:
     QString name;
     BufferType bufferType = BufferType::New;
-    BomType bomType = BomType::None;
+    Encoding currentEncoding = Encoding::Utf8;
+    QByteArray diskData;
+    bool encodingDirty = false;
     QFileInfo fileInfo;
     QDateTime modifiedTime;
     RangeAllocator indicatorResources;

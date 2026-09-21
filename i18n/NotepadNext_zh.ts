@@ -77,27 +77,27 @@
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="155"/>
       <source>ANSI</source>
-      <translation type="unfinished">ANSI</translation>
+      <translation>ANSI</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="159"/>
       <source>UTF-8</source>
-      <translation type="unfinished">UTF-8</translation>
+      <translation>UTF-8</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="160"/>
       <source>UTF-8 BOM</source>
-      <translation type="unfinished">UTF-8 BOM</translation>
+      <translation>UTF-8 BOM</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="161"/>
       <source>UTF-16LE BOM</source>
-      <translation type="unfinished">UTF-16LE BOM</translation>
+      <translation>UTF-16LE BOM</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="162"/>
       <source>UTF-16BE BOM</source>
-      <translation type="unfinished">UTF-16BE BOM</translation>
+      <translation>UTF-16BE BOM</translation>
     </message>
     <message>
       <location filename="../src/widgets/EditorInfoStatusBar.cpp" line="178"/>
@@ -1433,9 +1433,24 @@
       <translation>编辑宏...</translation>
     </message>
     <message>
-      <location filename="../src/dialogs/MainWindow.ui" line="1092"/>
-      <source>This is not currently implemented</source>
-      <translation>此功能尚未实现</translation>
+      <source>Convert to ANSI</source>
+      <translation>转为 ANSI</translation>
+    </message>
+    <message>
+      <source>Convert to UTF-8</source>
+      <translation>转为 UTF-8</translation>
+    </message>
+    <message>
+      <source>Convert to UTF-8 BOM</source>
+      <translation>转为 UTF-8 BOM</translation>
+    </message>
+    <message>
+      <source>Convert to UTF-16LE BOM</source>
+      <translation>转为 UTF-16LE BOM</translation>
+    </message>
+    <message>
+      <source>Convert to UTF-16BE BOM</source>
+      <translation>转为 UTF-16BE BOM</translation>
     </message>
     <message>
       <location filename="../src/dialogs/MainWindow.ui" line="1097"/>
