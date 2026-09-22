@@ -75,3 +75,13 @@ ads--CDockWidgetTab[activeTab="false"] QLabel {
     border-bottom: 3px solid blue;
     background: palette(window);
 }
+
+QGroupBox {
+    margin-top: 22px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px;
+}
