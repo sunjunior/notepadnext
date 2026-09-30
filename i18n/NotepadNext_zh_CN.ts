@@ -1431,23 +1431,23 @@
     </message>
     <message>
       <source>Convert to ANSI</source>
-      <translation>转为 ANSI</translation>
+      <translation>转为 ANSI 编码</translation>
     </message>
     <message>
       <source>Convert to UTF-8</source>
-      <translation>转为 UTF-8</translation>
+      <translation>转为 UTF-8 编码</translation>
     </message>
     <message>
       <source>Convert to UTF-8 BOM</source>
-      <translation>转为 UTF-8 BOM</translation>
+      <translation>转为 UTF-8 BOM 编码</translation>
     </message>
     <message>
       <source>Convert to UTF-16LE BOM</source>
-      <translation>转为 UTF-16LE BOM</translation>
+      <translation>转为 UTF-16LE BOM 编码</translation>
     </message>
     <message>
       <source>Convert to UTF-16BE BOM</source>
-      <translation>转为 UTF-16BE BOM</translation>
+      <translation>转为 UTF-16BE BOM 编码</translation>
     </message>
 
     <message>
