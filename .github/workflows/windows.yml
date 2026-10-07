@@ -57,7 +57,7 @@ jobs:
           Copy-Item $exe.FullName $target
           "path=$target" >> $env:GITHUB_OUTPUT
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: windows-installer
           path: ${{ steps.nsi.outputs.path }}
